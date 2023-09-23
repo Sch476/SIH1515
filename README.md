@@ -36,7 +36,7 @@ npm install
 ```
 Run the code
 ```bash
-  expo start
+expo start
 ```
     
 ## Contributing
