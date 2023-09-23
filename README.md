@@ -28,7 +28,7 @@ This repository contains the source code for a Smart Parking App built using Rea
 Install the project with npm
 
 ```bash
-git clone [url ](https://github.com/Sch476/SIH1515.git)
+git clone https://github.com/Sch476/SIH1515.git
 ```
 Next install Dependencies
 ```bash
