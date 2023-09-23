@@ -102,8 +102,8 @@ const HomeScreen = () => {
           style={{
             margin: 20,
             borderColor: "#003580",
-            borderWidth: 3,
-            borderRadius: 6,
+            borderWidth: 5,
+            borderRadius: 10,
           }}
         >
           <Pressable
@@ -172,7 +172,7 @@ const HomeScreen = () => {
           <Pressable
             onPress={() => searchPlaces(route?.params?.input)}
             style={{
-              paddingHorizontal: 10,
+              paddingHorizontal: 15,
               borderColor: "#003580",
               borderWidth: 2,
               paddingVertical: 15,

@@ -10,6 +10,7 @@ import React, { useLayoutEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { savedPlaces } from "../SavedReducer";
+import data from "./data";
 
 const UserScreen = () => {
   const navigation = useNavigation();
@@ -34,6 +35,25 @@ const UserScreen = () => {
   const dispatch = useDispatch();
   const confirmBooking = async () => {
     dispatch(savedPlaces(route.params));
+    console.log("DISPATCHED");
+    for (var i = 0; i < data.length; i++) {
+      console.log("INSIDE 1st FOR");
+      for (var j = 0; j < data[i].properties.length; j++) {
+        console.log("INSIDE 2nd FOR");
+        if (data[i].properties[j].name == route.params.name) {
+          console.log("INSIDE 1st IF");
+          for (var k = 0; k < data[i].properties[j].slots.length; k++) {
+            console.log("INSIDE 3rd FOR");
+            if (!data[i].properties[j].slots[k].occupied) {
+              console.log("PROPERTY BOOKEDDDDDDDD");
+              data[i].properties[j].slots[k].occupied = 1;
+              console.log("MARKED AS BOOKED");
+              break;
+            }
+          }
+        }
+      }
+    }
     navigation.navigate("Confirmation", {
       price: route.params.price,
       name: route.params.name,
