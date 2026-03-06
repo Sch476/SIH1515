@@ -7,11 +7,13 @@ import {
   TextInput,
   Pressable,
   Platform,
+  StatusBar,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { FontAwesome } from "@expo/vector-icons";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -42,6 +44,7 @@ const LoginPage = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="light-content" backgroundColor="#2dba8b" />
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.keyboardView}
@@ -52,7 +55,7 @@ const LoginPage = () => {
           {/* Email / Phone Input */}
           <View style={styles.inputRow}>
             <View style={styles.iconBox}>
-              <Text style={styles.iconText}>👤</Text>
+              <FontAwesome name="user" size={20} color="#fff" />
             </View>
             <TextInput
               value={email}
@@ -68,7 +71,7 @@ const LoginPage = () => {
           {/* Password Input */}
           <View style={styles.inputRow}>
             <View style={styles.iconBox}>
-              <Text style={styles.iconText}>🔒</Text>
+              <FontAwesome name="lock" size={20} color="#fff" />
             </View>
             <TextInput
               value={password}
@@ -145,6 +148,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#ddd",
     marginBottom: 20,
+    paddingBottom: 5,
   },
   iconBox: {
     backgroundColor: "#1a6b4a",
@@ -155,19 +159,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginRight: 12,
   },
-  iconText: {
-    fontSize: 18,
-    color: "#fff",
-  },
   input: {
     flex: 1,
     fontSize: 16,
     color: "#333",
-    paddingVertical: 10,
+    paddingVertical: 8,
   },
   forgotContainer: {
     alignSelf: "flex-start",
-    marginBottom: 20,
+    marginBottom: 22,
   },
   forgotText: {
     fontSize: 14,
