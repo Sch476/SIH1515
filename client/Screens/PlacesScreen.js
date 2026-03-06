@@ -12,8 +12,7 @@ import { ModalTitle } from "react-native-modals";
 import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { ModalContent } from "react-native-modals";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { db, collection, getDocs } from "../firebase";
 import data from "./data";
 const PlacesScreen = () => {
   const route = useRoute();

@@ -11,8 +11,7 @@ import {
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, signInWithEmailAndPassword } from "../firebase";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");

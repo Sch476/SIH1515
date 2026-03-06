@@ -2,8 +2,7 @@ import { StyleSheet, Text, View, SafeAreaView, TextInput } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import SearchResults from "../Components/SearchResults";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { db, collection, getDocs } from "../firebase";
 
 const SearchScreen = () => {
   const [input, setInput] = useState("");

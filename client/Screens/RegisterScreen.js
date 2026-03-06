@@ -13,9 +13,7 @@ import {
   Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "../firebase";
-import { setDoc, doc } from "firebase/firestore";
+import { auth, db, createUserWithEmailAndPassword, setDoc, doc } from "../firebase";
 
 const RegisterScreen = () => {
   const [email, setEmail] = useState("");
